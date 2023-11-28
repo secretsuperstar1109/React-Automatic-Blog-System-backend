@@ -49,3 +49,7 @@ module.exports.getIdSetting = (req, res) => {
 				.json({ message: "Error fetching Blog", error: err.message });
 		});
 };
+
+
+
+
