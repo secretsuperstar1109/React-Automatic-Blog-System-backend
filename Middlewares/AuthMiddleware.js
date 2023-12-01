@@ -18,6 +18,7 @@ module.exports.userVerification = (req, res) => {
 					username: user.username,
 					user_salon_id: user.salon_id,
 					id: user._id,
+					permission: user.permission
 				});
 			else return res.json({ status: false });
 		}

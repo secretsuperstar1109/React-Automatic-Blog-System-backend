@@ -64,9 +64,13 @@ module.exports.putUpdateBlog = (req, res) => {
 		title_character,
 		coupon,
 		signature,
+		uploadImage,
 		post_text,
 	} = req.body;
-	const uploadImage = url + "/images/" + req.file.filename;
+	if (req.file) {
+		uploadImage = url + "/images/" + req.file.filename;
+	}
+
 	const newBlogData = {
 		post_date,
 		contributor,
