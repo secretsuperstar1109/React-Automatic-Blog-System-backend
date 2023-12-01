@@ -155,6 +155,9 @@ module.exports.putUpdateStyle = (req, res) => {
 		front,
 		front1,
 		front2,
+		selectedImage1,
+		selectedImage2,
+		selectedImage3,
 		stylist_name,
 		sex,
 		length,
@@ -183,20 +186,26 @@ module.exports.putUpdateStyle = (req, res) => {
 		face_type_square,
 		menu_content,
 	} = req.body;
-	if (!req.files || !req.files["selectedImage1"]) {
-		return res.status(400).json({ error: "Missing selectedImage1" });
+
+	let selectedImageUpload1 = selectedImage1;
+	let selectedImageUpload2 = selectedImage2;
+	let selectedImageUpload3 = selectedImage3;
+
+	if (req.files) {
+		if (req.files["selectedImage1"]) {
+			selectedImageUpload1 = req.files["selectedImage1"][0].filename;
+		}
+
+		if (req.files["selectedImage2"]) {
+			selectedImageUpload2 =
+				url + "/images/" + req.files["selectedImage2"][0].filename;
+		}
+
+		if (req.files["selectedImage3"]) {
+			selectedImageUpload3 =
+				url + "/images/" + req.files["selectedImage3"][0].filename;
+		}
 	}
-
-	const selectedImage1 = req.files["selectedImage1"][0].filename;
-	const selectedImage2 =
-		req.files && req.files["selectedImage2"]
-			? url + "/images/" + req.files["selectedImage2"][0].filename
-			: null;
-
-	const selectedImage3 =
-		req.files && req.files["selectedImage3"]
-			? url + "/images/" + req.files["selectedImage3"][0].filename
-			: null;
 	console.log("selectImage1 : ", selectedImage1);
 	console.log("selectImage2 : ", selectedImage2);
 	console.log("selectImage3 : ", selectedImage3);
@@ -211,9 +220,9 @@ module.exports.putUpdateStyle = (req, res) => {
 		sync_start_time,
 		sync_interval,
 		post_mode,
-		selectedImage1: url + "/images/" + selectedImage1,
-		selectedImage2,
-		selectedImage3,
+		selectedImage1: url + "/images/" + selectedImageUpload1,
+		selectedImage2: selectedImageUpload2,
+		selectedImage3: selectedImageUpload3,
 		front,
 		front1,
 		front2,

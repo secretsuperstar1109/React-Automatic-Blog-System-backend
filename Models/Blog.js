@@ -19,15 +19,12 @@ const BlogSchema = new mongoose.Schema({
 	},
 	coupon: {
 		type: String,
-		required: true,
 	},
 	signature: {
 		type: String,
-		required: true,
 	},
 	uploadImage: {
 		type: String,
-		required: true,
 	},
 	post_text: {
 		type: String,

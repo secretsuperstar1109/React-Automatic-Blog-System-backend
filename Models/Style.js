@@ -7,7 +7,6 @@ const StyleSchema = new mongoose.Schema({
 	},
 	internal_memo: {
 		type: String,
-		required: true,
 	},
 	stylist_comment: {
 		type: String,
@@ -19,15 +18,12 @@ const StyleSchema = new mongoose.Schema({
 	},
 	styling_arrangement_point: {
 		type: String,
-		required: true,
 	},
 	sync_date_start: {
 		type: String,
-		required: true,
 	},
 	sync_date_end: {
 		type: String,
-		required: true,
 	},
 	sync_start_time: {
 		type: String,
@@ -39,7 +35,6 @@ const StyleSchema = new mongoose.Schema({
 	},
 	post_mode: {
 		type: String,
-		required: true,
 	},
 	selectedImage1: {
 		type: String,
@@ -99,7 +94,6 @@ const StyleSchema = new mongoose.Schema({
 	},
 	coupon: {
 		type: String,
-		required: true,
 	},
 	hair_amount_few: {
 		type: Boolean,
@@ -171,7 +165,6 @@ const StyleSchema = new mongoose.Schema({
 	},
 	menu_content: {
 		type: String,
-		required: true,
 	},
 	createdAt: {
 		type: Date,
