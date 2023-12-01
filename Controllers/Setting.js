@@ -50,6 +50,10 @@ module.exports.getIdSetting = (req, res) => {
 		});
 };
 
-
-
-
+module.exports.deleteSetting = (req, res) => {
+	User.findByIdAndDelete(req.params.id, req.body)
+		.then((data) => res.json({ message: "Blog deleted successfully", data }))
+		.catch((err) => {
+			res.status(404).json({ message: "book not found", error: err.message });
+		});
+};
