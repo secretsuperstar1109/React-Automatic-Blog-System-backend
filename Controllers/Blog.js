@@ -67,10 +67,10 @@ module.exports.putUpdateBlog = (req, res) => {
 		uploadImage,
 		post_text,
 	} = req.body;
+	let uploadImageFolder = "";
 	if (req.file) {
-		uploadImage = url + "/images/" + req.file.filename;
+		uploadImageFolder = url + "/images/" + req.file.filename;
 	}
-
 	const newBlogData = {
 		post_date,
 		contributor,
@@ -78,7 +78,7 @@ module.exports.putUpdateBlog = (req, res) => {
 		title_character,
 		coupon,
 		signature,
-		uploadImage,
+		uploadImage: uploadImageFolder ? uploadImageFolder : uploadImage,
 		post_text,
 	};
 	Blog.findByIdAndUpdate(req.params.id, newBlogData)
