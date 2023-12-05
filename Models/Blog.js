@@ -3,19 +3,15 @@ const mongoose = require("mongoose");
 const BlogSchema = new mongoose.Schema({
 	post_date: {
 		type: String,
-		required: true,
 	},
 	contributor: {
 		type: String,
-		required: true,
 	},
 	category: {
 		type: String,
-		required: true,
 	},
 	title_character: {
 		type: String,
-		required: true,
 	},
 	coupon: {
 		type: String,
@@ -28,7 +24,6 @@ const BlogSchema = new mongoose.Schema({
 	},
 	post_text: {
 		type: String,
-		required: true,
 	},
 	createdAt: {
 		type: Date,

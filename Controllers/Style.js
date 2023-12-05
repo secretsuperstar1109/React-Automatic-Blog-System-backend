@@ -187,13 +187,14 @@ module.exports.putUpdateStyle = (req, res) => {
 		menu_content,
 	} = req.body;
 
-	let selectedImageUpload1 = selectedImage1;
-	let selectedImageUpload2 = selectedImage2;
-	let selectedImageUpload3 = selectedImage3;
+	let selectedImageUpload1 = "";
+	let selectedImageUpload2 = "";
+	let selectedImageUpload3 = "";
 
 	if (req.files) {
 		if (req.files["selectedImage1"]) {
-			selectedImageUpload1 = req.files["selectedImage1"][0].filename;
+			selectedImageUpload1 =
+				url + "/images/" + req.files["selectedImage1"][0].filename;
 		}
 
 		if (req.files["selectedImage2"]) {
@@ -206,9 +207,9 @@ module.exports.putUpdateStyle = (req, res) => {
 				url + "/images/" + req.files["selectedImage3"][0].filename;
 		}
 	}
-	console.log("selectImage1 : ", selectedImage1);
-	console.log("selectImage2 : ", selectedImage2);
-	console.log("selectImage3 : ", selectedImage3);
+	console.log("selectImageUpload1 : ", selectedImageUpload1);
+	console.log("selectImageUpload2 : ", selectedImageUpload2);
+	console.log("selectImageUpload3 : ", selectedImageUpload3);
 	const newStyleData = {
 		update_stop,
 		internal_memo,
@@ -220,9 +221,15 @@ module.exports.putUpdateStyle = (req, res) => {
 		sync_start_time,
 		sync_interval,
 		post_mode,
-		selectedImage1: url + "/images/" + selectedImageUpload1,
-		selectedImage2: selectedImageUpload2,
-		selectedImage3: selectedImageUpload3,
+		selectedImage1: selectedImageUpload1
+			? selectedImageUpload1
+			: selectedImage1,
+		selectedImage2: selectedImageUpload2
+			? selectedImageUpload2
+			: selectedImage2,
+		selectedImage3: selectedImageUpload3
+			? selectedImageUpload3
+			: selectedImage3,
 		front,
 		front1,
 		front2,
