@@ -1,9 +1,9 @@
 const { Signup, Login } = require("../Controllers/AuthController");
 const {
-	GeneralSetting,
-	putUpdateSetting,
-	getIdSetting,
-	deleteSetting,
+  GeneralSetting,
+  putUpdateSetting,
+  getIdSetting,
+  deleteSetting,
 } = require("../Controllers/Setting");
 const { userVerification } = require("../Middlewares/AuthMiddleware");
 const router = require("express").Router();
