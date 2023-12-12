@@ -25,7 +25,7 @@ module.exports.getIdBlog = (req, res) => {
 };
 
 module.exports.postCreateBlog = (req, res) => {
-  const url = "https://os3-318-48579.vs.sakura.ne.jp";
+  const url = "/backend";
   const {
     post_date,
     contributor,
@@ -56,7 +56,7 @@ module.exports.postCreateBlog = (req, res) => {
 };
 
 module.exports.putUpdateBlog = (req, res) => {
-  const url = "https://os3-318-48579.vs.sakura.ne.jp";
+  const url = "/backend";
   const {
     post_date,
     contributor,
