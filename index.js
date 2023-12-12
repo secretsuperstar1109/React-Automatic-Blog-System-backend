@@ -18,7 +18,7 @@ const { MONGO_URL, PORT } = process.env;
 app.use(
   cors({
     origin: [
-      "https://os3-318-48579.vs.sakura.ne.jp:4000",
+      "https://os3-318-48579.vs.sakura.ne.jp:3000",
       "https://localhost:3000",
       "http://localhost:3000",
       "http://localhost:4000",
@@ -41,11 +41,11 @@ app.use("/api/style", Style);
 
 app.use("/api/blog", Blog);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

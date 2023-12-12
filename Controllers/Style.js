@@ -25,7 +25,7 @@ module.exports.getIdStyle = (req, res) => {
 };
 
 module.exports.postCreateStyle = (req, res) => {
-  const url = "https://os3-318-48579.vs.sakura.ne.jp";
+  const url = "/backend";
   const {
     update_stop,
     internal_memo,
@@ -140,7 +140,7 @@ module.exports.postCreateStyle = (req, res) => {
 };
 
 module.exports.putUpdateStyle = (req, res) => {
-  const url = "https://os3-318-48579.vs.sakura.ne.jp";
+  const url = "/backend";
   const {
     update_stop,
     internal_memo,
